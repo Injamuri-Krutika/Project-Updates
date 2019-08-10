@@ -1,4 +1,6 @@
-h1 {}
+body {
+  font-family: "Roboto", sans-serif;
+}
 
 .jumbotron {
   padding-top: 6rem;
@@ -15,8 +17,8 @@ h1 {}
   font-weight: 300;
 }
 
-.jumbotron .container {
-  max-width: 40rem;
+.jumbotron {
+  max-width: 60rem;
 }
 
 .profile {
@@ -28,10 +30,19 @@ h1 {}
 }
 
 .card {
-  float: left;
-  padding: .75rem;
-  margin-bottom: 2rem;
-  border: none;
+  background: #fff;
+  max-width: 300px;
+  box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.25);
+  display: flex;
+  flex-direction: row;
+  border-radius: 25px;
+  position: relative;
+  margin: 10px;
+}
+
+.card:hover {
+  box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.5);
+  transform: translate3d(0px, -1px, 0px);
 }
 
 img.center {
@@ -39,8 +50,8 @@ img.center {
   margin: 0 auto;
 }
 
-.card>img {
-  margin-bottom: .75rem;
+.card > img {
+  margin-bottom: 0.75rem;
   width: 300px;
   height: 300px;
 }
@@ -49,12 +60,6 @@ img.center {
   font-size: 85%;
 }
 
-footer {
-  background-color: #eee;
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-}
-
-footer p {
-  margin-bottom: .25rem;
+.space {
+  margin: 5px;
 }
