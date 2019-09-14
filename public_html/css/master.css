@@ -31,13 +31,16 @@ body {
 
 .card {
   background: #fff;
-  max-width: 300px;
   box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.25);
   display: flex;
   flex-direction: row;
   border-radius: 25px;
   position: relative;
   margin: 10px;
+}
+
+.papers {
+  max-width: 300px;
 }
 
 .card:hover {
