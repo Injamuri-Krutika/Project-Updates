@@ -29,6 +29,128 @@
     </div>
   </div>
   <div class="row research">
+    <div class="card col-12 card-shadow">
+      <div class="card-header">Date: 7th September 2019</div>
+      <div class="card-body">
+          <p class="card-text">
+              <h3>Experimenting with the foveation operation</h3>
+              <p>Git Repository: <a href="https://github.com/dnn-hvs/Siamese-Network" target="blank">Siamese Network</a>, 
+                <a href="https://github.com/dnn-hvs/Foveated-Transform" target="blank">Foveation</a></p>
+              <p>Results: <a href="https://drive.google.com/open?id=1iky2Z-kl2sBcDb67pwHpN9rzPRIePbYu" target="blank">Drive link</a></p>
+
+              <h5> What was done?</h5>
+              <p>The main focus for this part of the experiment was to find a neural network that best corelates with the RDMs we have.
+                The experiments were performed over many variants of the network. The major parameters that changed were as follows:
+              </p>
+                <ul>
+                    <li>The task: fMRI or MEG</li>
+                    <li>Wheather Foveation was applied or not</li>
+                    <li>Wheather the layers of the network were frozen during fine-tuning</li>
+                    <li>Wheather the network was trained for early or later regions</li>
+                </ul>
+              <p>Now this gives us 16 variatons for each type of model. After the fine tuning process, we create features from which RDMs can be formed.</p>
+              <ul>
+                  <b><li>Training setup:</li></b>
+                    <p>We considered two famous architectures, AlexNet and VGG16 each of them is setup as 16 combinations as described above.
+                      Each one of them was then trained for 150 epochs.
+                    </p>
+                    While training we saved both the best performing and the latest models. The best performing model was the one that had the least loss.
+                    <p>
+                    </p>
+                  <b><li>Results obtained:</li></b>
+                  <ul>
+                    <li><b><u>The following parameters are used for evaluation:</u></b></li>
+                    <ol>
+                      <li><b>fMRI</b>
+                        <ul>
+                          <li>EVC R <sup>2</sup></li> 
+                          <li>EVC Significance</li>
+                          <li>EVC % Noise Ceiling</li>
+                          <li>IT R <sup>2</sup></li>
+                          <li>IT Significance</li>
+                          <li>IT % Noise Ceiling</li>                         
+                          <li>fMRI Average R <sup>2</sup></li>
+                          <li>fMRI Average % Noise Ceiling</li>
+                        </ul>
+                      </li>
+                      <li><b>MEG</b>
+                        <ul>
+                          <li>Early R <sup>2</sup></li> 
+                          <li>Early Significance</li>
+                          <li>Early % Noise Ceiling</li>
+                          <li>Late R <sup>2</sup></li>
+                          <li>Late Significance</li>
+                          <li>Late % Noise Ceiling</li>                         
+                          <li>MEG Average R <sup>2</sup></li>
+                          <li>MEG Average % Noise Ceiling</li>
+                        </ul>
+                      </li>
+                    </ol>
+                    <li><b><u>Observations:</u></b></li>
+                    <p>Below we give results for both the 92 and the 118 image sets</p>
+                    <ul>
+                      <li><b><i>92 Image Set:</i></b></li>
+                      <ol>
+                          <li><b>fMRI</b>
+                            <ul>
+                              <li>EVC R<sup>2</sup>: vgg16_fmri_early_nofov_unfrozen_bestfmri92 with 0.06145370247</li> 
+                              <li>EVC Significance: alexnet_meg_late_nofov_unfrozen_bestfmri92 with 0.04258330791</li>
+                              <li>EVC % Noise Ceiling: vgg16_fmri_early_nofov_unfrozen_bestfmri92 with 38.67445089</li>
+                              <li>IT R<sup>2</sup>: alexnet_fmri_late_nofov_unfrozen_bestfmri92 with 0.1183017672</li>
+                              <li>IT Significance: alexnet_fmri_late_nofov_frozen_bestfmri92 with 0.02285354092</li>
+                              <li>IT % Noise Ceiling: alexnet_fmri_late_nofov_unfrozen_bestfmri92 with 38.47211941</li>                         
+                              <li>fMRI Average R<sup>2</sup>: alexnet_fmri_late_nofov_unfrozen_bestfmri92 with 0.06661316812</li>
+                              <li>fMRI Average % Noise Ceiling: alexnet_fmri_late_nofov_unfrozen_bestfmri92 with 28.56482338</li>
+                            </ul>
+                          </li>
+                          <li><b>MEG</b>
+                            <ul>
+                              <li>Early R<sup>2</sup>: vgg16_fmri_early_nofov_unfrozen_bestmeg92 with 0.1455016278</li> 
+                              <li>Early Significance: alexnet_fmri_late_nofov_frozen_bestmeg92 with 0.07310470618</li>
+                              <li>Early % Noise Ceiling: vgg16_fmri_early_nofov_unfrozen_bestmeg92 with 31.39871123</li>
+                              <li>Late R<sup>2</sup>: alexnet_fmri_late_fov_unfrozen_bestmeg92 with 0.06131034014</li>
+                              <li>Late Significance: alexnet_meg_late_fov_frozen_bestmeg92 with 0.01607485701</li>
+                              <li>Late % Noise Ceiling: alexnet_fmri_late_fov_unfrozen_bestmeg92 with 26.94960006</li>                         
+                              <li>MEG Average R<sup>2</sup>: alexnet_fmri_early_nofov_frozen_bestmeg92 with 0.09258170773</li>
+                              <li>MEG Average % Noise Ceiling: alexnet_fmri_early_nofov_frozen_bestmeg92 with 26.80032066</li>
+                            </ul>
+                          </li>
+                        </ol>
+                      <li><b><i>118 Image Set:</i></b></li>
+                      <ol>
+                          <li><b>fMRI</b>
+                            <ul>
+                              <li>EVC R<sup>2</sup>: vgg16_fmri_early_nofov_unfrozen_bestfmri118 with 0.04052828943</li> 
+                              <li>EVC Significance: vgg16_fmri_early_nofov_unfrozen_bestfmri118 with 0.06236890943</li>
+                              <li>EVC % Noise Ceiling: vgg16_fmri_early_nofov_unfrozen_bestfmri118 with 38.6720319</li>
+                              <li>IT R<sup>2</sup>: alexnet_fmri_late_fov_unfrozen_bestfmri118 with 0.01145429889</li>
+                              <li>IT Significance: alexnet_fmri_early_nofov_unfrozen_bestfmri118 with 0.06783343543</li>
+                              <li>IT % Noise Ceiling: alexnet_fmri_late_nofov_unfrozen_bestfmri118 with 12.75121378</li>                         
+                              <li>fMRI Average R<sup>2</sup>: vgg16_fmri_early_nofov_unfrozen_bestfmri118 with 0.02184186614</li>
+                              <li>fMRI Average % Noise Ceiling: vgg16_fmri_early_nofov_unfrozen_bestfmri118 with 24.5966961</li>
+                            </ul>
+                          </li>
+                          <li><b>MEG</b>
+                            <ul>
+                              <li>Early R <sup>2</sup></li> 
+                              <li>Early Significance</li>
+                              <li>Early % Noise Ceiling: vgg16_fmri_early_nofov_unfrozen_bestmeg118 with 37.36458679</li>
+                              <li>Late R<sup>2</sup>: alexnet_fmri_early_nofov_unfrozen_bestmeg118 with 0.03017670713</li>
+                              <li>Late Significance: alexnet_fmri_early_nofov_unfrozen_bestmeg118 with 0.1154116251</li>
+                              <li>Late % Noise Ceiling: alexnet_fmri_early_nofov_unfrozen_bestmeg118 with 13.3230495</li>                         
+                              <li>MEG Average R<sup>2</sup>: vgg16_fmri_early_nofov_unfrozen_bestmeg118 with 0.07918802147</li>
+                              <li>MEG Average % Noise Ceiling: vgg16_fmri_early_nofov_unfrozen_bestmeg118 with 27.62533454</li>
+                            </ul>
+                          </li>
+                        </ol>
+                    </ul>
+                  </ul>
+              </ul>
+          </p>
+      </div>
+    </div>
+</div>
+  <div class="row research">
       <div class="card col-12 card-shadow">
         <div class="card-header">Date: 14th September 2019</div>
         <div class="card-body">
