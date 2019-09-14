@@ -2,7 +2,6 @@
   <h1 class="jumbotron-heading text-center">
     Progress of our Research
   </h1>
-
   <div class="row research">
     <div class="card col-12 card-shadow">
       <div class="card-header">Date: 19th August 2019</div>
@@ -26,16 +25,6 @@
                 </ul>
             </ul>
         </p>
-        <!-- <a
-          href="https://www.nature.com/articles/srep27755"
-          class="btn btn-primary"
-          >View paper</a
-        >
-        <a
-          href="https://docs.google.com/presentation/d/1XX4ejWuV6NTtGzTJzEqliUhB-5cKLq5FcxBY6044FKY/edit?usp=sharing"
-          class="btn btn-primary"
-          >View Summary</a
-        > -->
       </div>
     </div>
   </div>
@@ -43,37 +32,76 @@
       <div class="card col-12 card-shadow">
         <div class="card-header">Date: 14th September 2019</div>
         <div class="card-body">
-          <p class="card-text">
-            <h3>Experimenting on RDMs</h3>
-              <ul>
-                  <li>Tasks completed so far:</li>
+            <p class="card-text">
+                <h3>Experimenting on RDMs</h3>
+                <p>Git Repository: <a href="https://github.com/dnn-hvs/Investigate-RDMs" target="blank">Investigate-RDMs</a></p>
+                <p>Results: <a href="https://drive.google.com/open?id=1-f01VlNDFrwoa-BftHZ6OeMY3N7eZAGw" target="blank">PDFs of the Results</a></p>
+
+                <h5> What was done?</h5>
+                <p>The task was divided into three parts</p>
                   <ul>
-                      <li>Recreated the <a href="https://arxiv.org/pdf/1907.02591.pdf">Algonauts challenge MEG winner's paper</a></li>
-                      <li>Trained AlexNet with and without foveation</li>
-                      <li>Used this trained model to check the results of Algonauts challenge</li>
-                      <li>Observed huge improvement in the results by applying foveation</li>
+                      <li>Investigation of fMRI RDMs</li>
+                      <li>Investigation of MEG RDMs with mean across the Time points (20)</li>
+                      <li>Investigation of MEG RDMs with maximum and minimum of RDMs across the Time points</li>
                   </ul>
-                  <li>Below are the things to be worked on:</li>
-                  <ul>
-                      <li>Create a proper logger</li>
-                      <li>Debugg the exploading weights in case of VGG</li>
-                      <li>Work on the MEG implementation</li>
-                      <li>Train all the networks</li>
-                      <li>Make foveation as one of the layers in the network instead of pre-processing step</li>
-                  </ul>
-              </ul>
-          </p>
-          <!-- <a
-            href="https://www.nature.com/articles/srep27755"
-            class="btn btn-primary"
-            >View paper</a
-          >
-          <a
-            href="https://docs.google.com/presentation/d/1XX4ejWuV6NTtGzTJzEqliUhB-5cKLq5FcxBY6044FKY/edit?usp=sharing"
-            class="btn btn-primary"
-            >View Summary</a
-          > -->
+                <p>Now lets see, what was done in each one of them and what were the results.</p>
+                <ul>
+                    <b><li>fMRI Investigation:</li></b>
+                    <ul>
+                      <li><u>Experiment conducted:</u></li>
+                      <p>For each of the 15 subjects, we have considered the 10 most similar image pairs (10 least RMD values)
+                        and 10 most dissimilar pairs (10 highest RDM values)
+                      </p>
+                      <li><u>Observations:</u></li>
+                      <p>There are no major observations in fMRI RDMs investigation. The image pairs are different for different subjects.
+                        Very few sceneraies, mokey faces, human faces are paired.
+                      </p>
+                    </ul>
+                    <b><li>MEG Investigation with mean:</li></b>
+                    <ul>
+                      <li><u>Experiment conducted:</u></li>
+                      <p>For each of the 15 subjects,the mean of RDMs was taken across the 20 Time points.
+                        Then, we have considered the 10 most similar image pairs (10 least RMD values)
+                        and 10 most dissimilar pairs (10 highest RDM values)
+                      </p>
+                      <li><u>Observations:</u></li>
+                      <ul>
+                        <li><i>MEG Early for 92 images:</i></li>
+                        <p>All the subjects show almost similar results with a very littele variations in the RDM values.
+                          Few of the similiar images have same shape.
+                        </p>
+                        <li><i>MEG Late for 92 images:</i></li>
+                        <p>Face pairs have lower RDM values. The image pairs for higher RDMS are also the same for all subjects.</p>
+                        <li><i>MEG Early for 118 images:</i></li>
+                        <p>Almost all the subjects have same image pairs. They have same shape.</p>
+                        <li><i>MEG Late for 118 images:</i></li>
+                        <p>Machines, Means of transport, animals are paired together.The background of few image pairs are also similar.</p>
+                      </ul>
+                    </ul>
+                    <b><li>MEG Investigation with max and min:</li></b>
+                    <ul>
+                      <li><u>Experiment conducted:</u></li>
+                      <p>For each of the 15 subjects, for the similar image pairs, an RDM(say "Min RDM") is created with lowest values across the time points. 
+                        And for dissimilar image pairs, another RDM(say "Max RDM") is created with highest values across the time points.
+                        Then, we have considered the 10 most similar image pairs (10 least RMD values from "Min RDM")
+                        and 10 most dissimilar pairs (10 highest RDM values from "Max RDM")
+                      </p>
+                      <li><u>Observations:</u></li>
+                      Similar to the observations in MEG with mean, all the subjects have almost same pairs.
+                      <ul>
+                        <li><i>MEG Early 92 images:</i></li>
+                        Images with similar faces, shapes , scenes were paired.
+                        <li><i>MEG Late 92 images:</i></li>
+                        Human and dog faces were paired.
+                        <li><i>MEG Early 118 images:</i></li>
+                        Few of the similar image pairs have same shape. Few pairs are same as those in the MEG mean eperiment.
+                        <li><i>MEG Late 118 images:</i></li>
+                        It does not make much sense. All subjects have almost same image pairs.
+                      </ul>
+                    </ul>
+                </ul>
+            </p>
         </div>
       </div>
-    </div>
+  </div>
 </div>
