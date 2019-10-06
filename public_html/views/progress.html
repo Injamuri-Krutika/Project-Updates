@@ -283,5 +283,72 @@
           </p>
       </div>
     </div>
-</div>
+  </div>
+  <div class="row research">
+    <div class="card col-12 card-shadow">
+      <div class="card-header">Date: 17th September 2019</div>
+      <div class="card-body">
+          <p class="card-text">
+              <h3>Salient Maps for Similar and Dissimilar image pairs</h3>
+              <p>Git Repository: <a href="https://github.com/dnn-hvs/Visualise" target="blank">Visualise</a></p>
+              <p>Results: <a href="#" target="blank">PDFs of the Results</a></p>
+
+              <h5> What was done?</h5>
+              <p>
+                <ol>
+                  <li>Salient Maps were created for pretrained models and fine-tuned models</li>
+                  <li>Salient maps for Similar and Dissimilar image pairs for few best performing models</li>
+                </ol>
+              </p>
+              <u><h5>Salient Maps for Pretrained models</h5></u>
+              <p>
+                Below are the observations from the Salient Maps for different models.
+                <ul>
+                  <li>The Salient maps were created for Squeezenet, Alexnet and VGG</li>
+                  <li>More noise was observed for a lady bug image for Squeenet model.</li>
+                  <li>The Salient maps for Alextnet were meaningful focusing on the black spots of the lady bug</li>
+                  <li>And those of VGG were focusing on a very small area, which made no sense at all.</li>
+                </ul>
+              </p>
+              <u><h5>Salient maps for fine-tuned models</h5></u>
+              <p>
+                <ul>
+                  <li>Few Salient maps for Squeezenet were blank.</li>
+                  <li>For Alexnet, they were similar to that of the pretrained model.</li>
+                  <li>And for VGG the focus maps didnt make any sense.</li>
+                </ul>
+              </p>
+              <u><h5>Salient maps for Similar and Dissimilar image pairs</h5></u>
+              <p>
+                In this, the Similar and Dissimilar image pairs of the fine-tuned models that 
+                performed well in the Algonauts challenge test were taken into consideration.
+                Salient maps were created for these image pairs. <br>
+                Models that were experimented:
+                <ul>
+                  <li>alexnet_fmri_early_fov_frozen_best</li>
+                  <li>alexnet_fmri_early_fov_unfrozen_best</li>
+                  <li>alexnet_fmri_early_nofov_unfrozen_best</li>
+                  <li>alexnet_fmri_late_fov_unfrozen_best</li>
+                  <li>alexnet_fmri_late_nofov_frozen_best</li>
+                  <li>alexnet_fmri_late_nofov_unfrozen_best</li>
+                </ul>
+                Following observations were made for <b>alexnet_fmri_early_nofov_unfrozen_best</b>:
+                <ul>
+                  <li>
+                      In the later layers of alexnet the similar images are not quite related.
+                  </li>
+                  <li>In the initial layers of alexnet the similar images have same shape.</li>
+                  <li>
+                      In the initial layers of Alexnet the RDM values of similar image pairs is as high as 0.4210, 0.4495, 0.4897, 0.3844 and 0.2601 for 1, 3, 7, 11 and 13th layers respectively.
+                  </li>
+                </ul>
+                <p>Similar observations were made for all the other models.The image pairs of all the models in the initial layers were similar. They were mainly shape based.
+                  Nothing significant can be found from the area of focus for the similar image pairs in the later layers. 
+                  But the image pairs are related to means of transport like scooter and train, and also musicl instruments.
+                </p>
+              </p>
+          </p>
+      </div>
+    </div>
+  </div>
 </div>
