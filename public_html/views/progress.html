@@ -331,6 +331,7 @@
                   <li>alexnet_fmri_late_fov_unfrozen_best</li>
                   <li>alexnet_fmri_late_nofov_frozen_best</li>
                   <li>alexnet_fmri_late_nofov_unfrozen_best</li>
+                  <li>vgg16_fmri_early_nofov_unfrozen_best</li>
                 </ul>
                 Following observations were made for <b>alexnet_fmri_early_nofov_unfrozen_best</b>:
                 <ul>
@@ -346,6 +347,16 @@
                   Nothing significant can be found from the area of focus for the similar image pairs in the later layers. 
                   But the image pairs are related to means of transport like scooter and train, and also musicl instruments.
                 </p>
+                Following observations were made for <b>vgg16_fmri_early_nofov_unfrozen_best</b>:
+                <ul>
+                  <li>The RDM values in the intial layers of VGG16 are greater than 0.6</li>
+                  <li>Just the first layer showed the orange and ball as similar images unlike alexnet that
+                    shows these image pairs for most of the inital layers.
+                  </li>
+                  <li>Only the 30th and 38th layer had lower RDM values.</li>
+                  <li>The similar image pairs in the last layers are same as that of alexnet i.e., means of transport and machines are paired. </li>
+                </ul>
+
               </p>
           </p>
       </div>
